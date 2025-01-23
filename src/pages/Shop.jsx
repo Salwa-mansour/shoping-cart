@@ -1,11 +1,11 @@
 import Navigation from "../components/navigaion";
-import ProductCard from "../components/ProductCard";
+import ProductsList from "../components/ProductsList";
+import '../styles/shop.css'
 
 export default function Shop(){
     return(
         <div>
-            <Navigation/>
-            <ProductCard id={1}/>
+            <ProductsList/>
         </div>
     );
 }

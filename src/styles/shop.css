@@ -1,0 +1,12 @@
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-list li{
+    width: 300px;
+    overflow-wrap: break-word;
+    min-width: 0;
+    padding: .5rem;
+    margin: .5rem;
+    outline: 1px solid gray;
+}
