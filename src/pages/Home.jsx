@@ -1,5 +1,6 @@
-import Navigation from "../components/navigaion";
+
 import Hero from "../components/Hero";
+import '../styles/Home.css';
 
 export default function Home(){
     return(

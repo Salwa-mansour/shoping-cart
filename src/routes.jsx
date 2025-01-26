@@ -3,7 +3,6 @@ import Shop from "./pages/Shop";
 import Product from "./pages/Product";
 import ErrorPage from "./pages/ErrorPage";
 import Layout from "./pages/_Layout";
-import App from "./App";
 
 const routes = [
   {

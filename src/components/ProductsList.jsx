@@ -2,7 +2,7 @@ import { useAllProductsData } from "../utils/hooks";
 import ProductCard from "./ProductCard";
 import { Link } from "react-router-dom";
 
-function ProductsList(){
+function ProductsList({addCartItem}){
       const { allProductsData, error, loading } =useAllProductsData();
 
      if (loading) return <p>Loading...</p>;
@@ -14,9 +14,9 @@ function ProductsList(){
                 allProductsData.map(product=>{
                     return(
                         <li key={product.id}>
-                           <Link to={`/product/${product.id}`}>
-                           <ProductCard Product={product} />
-                           </Link>
+                           {/* <Link to={`/product/${product.id}`}> */}
+                           <ProductCard addCartItem={addCartItem} Product={product} />
+                           {/* </Link> */}
                         
                         </li>
                       

@@ -4,42 +4,57 @@ const useCartMethods = ()=>{
 
   const [cartItems,setCartItems] = useState([]);
  
-  function incrementItemCount(id){
-    const newCartItems = cartItems.map((item)=>{
-      if(item.product.id == id){
-        item.count++;
+  function incrementItemCount(item){
+    const newCartItems = cartItems.map((cartItem)=>{
+      if(cartItem.id == item.id){
+        cartItem.count++;
+    
       }
-      return item;
+      return cartItem;
     });
+   // console.log(newCartItems)
     setCartItems(newCartItems);
   }
-  function decrementItemCount(id){
-    const newCartItems = cartItems.map((item)=>{
-      if(item.product.id == id){
-        item.count--;
+  function decrementItemCount(item){
+    const newCartItems = cartItems.map((cartItem)=>{
+      if(cartItem.id == item.id){
+        cartItem.count--;
       }
-      return item;
+      return cartItem;
     });
     setCartItems(newCartItems);
+
+  }
+  function reSetItemCount(item,count){
+    const newCartItems = cartItems.map((cartItem)=>{
+      if(cartItem.id == item.id){
+        cartItem.count = count;
+      }
+      return cartItem;
+    });
+    setCartItems(newCartItems);
+
   }
   function addCartItem(product){
+    
     const cartItem ={
       id:crypto.randomUUID(),
       product:product,
       count:1
     }
+
     setCartItems([...cartItems,cartItem]);
+console.log(cartItems)
   }
+
   function removeCartItem(id){
-    const newCartItems = cartItems.filter(item=>{
-      if(item.id !==id){
-        return item;
-      }
-    });
-    setCartItems(newCartItems);
+    const newCartItems = cartItems.filter(item =>item.id != id);
+  
+      setCartItems(newCartItems);
+  
   }
   return{
-    cartItems,incrementItemCount,decrementItemCount,addCartItem,removeCartItem
+    cartItems,incrementItemCount,decrementItemCount,reSetItemCount,addCartItem,removeCartItem
   };
 };
 const useAllProductsData = (id="") => {
@@ -68,5 +83,5 @@ const useAllProductsData = (id="") => {
 export {
     useAllProductsData,
     useCartMethods,
-    useCartMethods2
+    
 }

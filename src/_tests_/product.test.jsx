@@ -1,8 +1,8 @@
 import {render, renderHook,act, waitFor,screen } from "@testing-library/react";
 import { describe,it,expect ,vi, beforeEach, afterEach } from "vitest";
-import { useAllProductsData } from "../src/utils/hooks";
-import ProductCard from "../src/components/ProductCard";
-import { useCartMethods2 } from "../src/utils/hooks";
+import { useAllProductsData } from "../utils/hooks";
+import ProductCard from "../components/ProductCard";
+import { useCartMethods2 } from "../utils/hooks";
 
 describe("product data",()=>{
 
@@ -69,10 +69,3 @@ describe("shop dom",()=>{
 
 });
 
-/* 
-in the cart item test incrmenting and decrmenting funcionlity
-act(()=>{
-   result.item.function() // call increament funcion
-   expect(result.item.count).toBe(2)  // to be incrmented by one
-    });
-*/
