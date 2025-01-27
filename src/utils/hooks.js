@@ -18,7 +18,10 @@ const useCartMethods = ()=>{
   function decrementItemCount(item){
     const newCartItems = cartItems.map((cartItem)=>{
       if(cartItem.id == item.id){
+      
+        if(!(cartItem.count -1 < 1)){
         cartItem.count--;
+        }
       }
       return cartItem;
     });
@@ -36,7 +39,7 @@ const useCartMethods = ()=>{
 
   }
   function addCartItem(product){
-    
+      if(cartItems.some((item)=>item.product.id == product.id)) return;    
     const cartItem ={
       id:crypto.randomUUID(),
       product:product,

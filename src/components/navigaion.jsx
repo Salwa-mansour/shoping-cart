@@ -15,7 +15,7 @@ import '../styles/Header.css'
             <li>
               <Link to="Shop" >Shop</Link>
             </li>
-            <li>
+            <li >
               <CartIcon cartItems={cartItems} showCart={showCart} setShowCart={setShowCart} />
             </li>
         </ul>

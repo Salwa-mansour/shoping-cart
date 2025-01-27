@@ -17,7 +17,7 @@
     inset-inline-end: 0;
     width: min(400px,80%);
     padding: 2rem;
-    outline: 1px solid red;
+    background-color: hsl(0, 0%, 95%);
     height: 100%;
    
 }

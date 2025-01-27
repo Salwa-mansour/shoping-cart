@@ -13,9 +13,9 @@ function Layout(){
         <Navigation cartItems={cartItems} showCart={showCart} setShowCart={setShowCart} />
         <Outlet  context={{cartItems,addCartItem,removeCartItem,incrementItemCount,decrementItemCount
             ,reSetItemCount }} />
-             <Cart cartItems={cartItems} removeCartItem={removeCartItem} incrementItemCount={incrementItemCount}
-             decrementItemCount={decrementItemCount} reSetItemCount={reSetItemCount} 
-             showCart={showCart} setShowCart={setShowCart}/>
+        <Cart cartItems={cartItems} removeCartItem={removeCartItem} incrementItemCount={incrementItemCount}
+        decrementItemCount={decrementItemCount} reSetItemCount={reSetItemCount} 
+        showCart={showCart} setShowCart={setShowCart}/>
         </>
     )
 }
